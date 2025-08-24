@@ -69,20 +69,25 @@ public class Taser : CustomWeapon
 
     protected override void OnShot(ShotEventArgs ev)
     {
+        Log.Debug("Shot Event Triggered.");
         if (!Check(ev.Player.CurrentItem))
             return;
 
+        Log.Debug("Taser was shot event.");
+
         if (ev.Player == null || ev.Target == null)
             return;
-
+        Log.Debug("Player and Target are not null.");
         ev.CanHurt = false;
 
-        if (ev.Target.RoleManager.CurrentRole.Team != Team.SCPs)
+        if (ev.Target.RoleManager.CurrentRole.Team == Team.SCPs)
             return;
+        Log.Debug("Target is not SCP.");
 
         Armor currentArmor = ev.Target.CurrentArmor;
-        if (currentArmor.Type != ItemType.ArmorHeavy || currentArmor.Type != ItemType.ArmorCombat)
+        if (currentArmor == null || currentArmor.Type != ItemType.ArmorHeavy || currentArmor.Type != ItemType.ArmorCombat)
         {
+            Log.Debug("Target does not have heavy or combat armor.");
 
             ev.Target.EnableEffect<Slowness>(85, 4f);
             ev.Target.EnableEffect<Deafened>(6f);
@@ -90,6 +95,7 @@ public class Taser : CustomWeapon
             ev.Target.EnableEffect<Concussed>(6f);
             ev.Target.DropHeldItem();
             Timing.RunCoroutine(Slowness(ev.Target));
+            Log.Debug($"Taser effects applied to {ev.Target}.");
 
 
         }
