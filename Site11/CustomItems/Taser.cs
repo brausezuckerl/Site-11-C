@@ -25,7 +25,7 @@ public class Taser : CustomWeapon
 
     public override ItemType Type { get; set; } = ItemType.GunCOM18;
 
-    public override uint Id { get; set; } = 1u;
+    public override uint Id { get; set; } = 600u;
 
     public override string Name { get; set; } = "Taser";
 

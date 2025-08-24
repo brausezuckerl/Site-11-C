@@ -28,14 +28,6 @@ namespace Site11Cursed.Commands
 
             string action = arguments.At(0).ToLower();
 
-            var shivAbility = CustomAbility.Get("Shiv");
-
-            if (shivAbility == null)
-            {
-                response = "Shiv ability not found.";
-                return false;
-            }
-
             switch (action)
             {
                 case "disable":
