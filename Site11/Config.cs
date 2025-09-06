@@ -15,10 +15,17 @@ namespace Site11Cursed.Configs
         [Description("Whether Debug Mode is enabled")]
         public bool Debug { get; set; } = false;
 
-        [Description("The description of the custom item Taser")]
-        public string TaserDescription { get; set; } = "";
 
         [Description("Sets the cooldown for the shiv ability")]
         public float ShivCooldown { get; set; } = 300f;
+
+        [Description("The description of the custom item Taser")]
+        public string TaserDescription { get; set; } = "";
+
+        [Description("The description of the custom item Smoke Grenade")]
+        public string SmokeGrenadeDescription { get; set; } = "";
+
+        [Description("The duration of the smoke")]
+        public float SmokeGrenadeDuration { get; set; } = 15f;
     }
 }
