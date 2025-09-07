@@ -29,7 +29,7 @@ public class SmokeGrenade : CustomGrenade
 
     public override ItemType Type { get; set; } = ItemType.GrenadeFlash;
 
-    public override uint Id { get; set; } = 2u;
+    public override uint Id { get; set; } = 601u;
 
     public override string Name { get; set; } = "Smoke Grenade";
 
@@ -86,10 +86,10 @@ public class SmokeGrenade : CustomGrenade
         var SmokeDuration = Plugin.Instance.Config.SmokeGrenadeDuration;
         Timing.CallDelayed(SmokeDuration, delegate
         {
-            pickup.Position += Vector3.down * 10f;
+            pickup.Position += Vector3.down * 30f;
 
             //this is so there is like a fade effect so it just looks better than it just being pew gone, cuz when you destroy the pickup the smoke insta dissapears when moving the pickup it does not
-            Timing.CallDelayed(20f, delegate
+            Timing.CallDelayed(15f, delegate
             {
                 pickup.Destroy();
             });

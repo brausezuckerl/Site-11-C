@@ -143,6 +143,7 @@
   <ItemGroup>
     <Compile Include="Commands\ToggleShivAbility.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="CustomItems\Cuffs.cs" />
     <Compile Include="CustomItems\SmokeGrenade.cs" />
     <Compile Include="CustomItems\Taser.cs" />
     <Compile Include="EventHandler\PlayerEventHandler.cs" />

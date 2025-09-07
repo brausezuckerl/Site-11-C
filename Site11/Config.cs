@@ -27,5 +27,11 @@ namespace Site11Cursed.Configs
 
         [Description("The duration of the smoke")]
         public float SmokeGrenadeDuration { get; set; } = 15f;
+
+        [Description("The description of the custom item Handcuffs")]
+        public string HandCuffsDescription { get; set; } = "";
+
+        [Description("Sets whether the handcuff item should be removed after being used")]
+        public bool HandCuffsOneUse { get; set; } = true;
     }
 }
